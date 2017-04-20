@@ -16,6 +16,11 @@ class PurchasesController < ApplicationController
     @purchase.user_id = current_user.id
     @purchase.product_id = params[:product_id]
     if @purchase.save
+
+      user = "fukunagakaihatu48@gmail.com"
+
+      PurchaseMailer.purchase_email(user, @purchase).deliver
+
       redirect_to root_path
     else
       render 'new'
