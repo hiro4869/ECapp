@@ -18,7 +18,7 @@ class PurchasesController < ApplicationController
     if @purchase.save
 
       #管理ユーザーにメールを送信
-      adminuser = "fukunagakaihatu48@gmail.com"
+      adminuser = ENV['email']
       PurchaseMailer.purchase_email(adminuser, @purchase).deliver
 
       #購入者にメールを送る

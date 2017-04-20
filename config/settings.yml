@@ -1,0 +1,14 @@
+defaults: &defaults
+  address: smtp.gmail.com
+  email: fukunagakaihatu48@gmail.com
+  user_name: fukunagakaihatu48
+  password: haebaru48
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
